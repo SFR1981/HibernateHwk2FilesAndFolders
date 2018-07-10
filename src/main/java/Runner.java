@@ -21,7 +21,17 @@ public class Runner {
         DBHelper.save(file3);
         DBHelper.save(file4);
 
-        List<File> allFiles
+        List<File> allFiles = DBHelper.getAll(File.class);
+
+
+
+        List<Folder> allFolders = DBHelper.getAll(Folder.class);
+
+        file1.setExtension("pages");
+        DBHelper.update(file1);
+
+        folder1.setTitle("Fiction");
+        DBHelper.update(folder1);
 
 
 
