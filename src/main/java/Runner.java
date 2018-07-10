@@ -1,8 +1,11 @@
+import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
 
 import java.util.List;
+
+import static db.DBFolder.getFilesForFolder;
 
 public class Runner {
 
@@ -33,8 +36,11 @@ public class Runner {
         folder1.setTitle("Fiction");
         DBHelper.update(folder1);
 
+        List<File> filesInFolder2 = DBFolder.getFilesForFolder(folder2);
 
 
+        DBHelper.delete(file2);
+        DBHelper.update(file2);
 
 
     }
