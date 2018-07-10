@@ -45,6 +45,36 @@ public class File {
         this.name = newName;
     }
 
+    @Column(name = "extension")
+    public String getExtension(){
+        return this.extension;
+    }
+
+    public void setExtension(String extension){
+        this.extension = extension;
+    }
+
+    @Column(name = "file_size")
+    public int getFileSize(){
+        return this.fileSize;
+    }
+
+    public void setFileSize(int size){
+        this.fileSize = size;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
+    public Folder getFolder(){
+        return this.folder;
+    }
+
+    public void setFolder(Folder newFolder){
+        this.folder = newFolder;
+    }
+
+
 
 
 }
